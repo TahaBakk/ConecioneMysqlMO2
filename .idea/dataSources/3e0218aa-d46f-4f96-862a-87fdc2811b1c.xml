@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - World@172.31.73.167">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="World">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="prueba"/>
+    <schema id="6" name="sys"/>
+    <table id="7" parent="1" name="city"/>
+    <column id="8" parent="7" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="9" parent="7" name="Name">
+      <mandatory>1</mandatory>
+      <data-type>char(35)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="10" parent="7" name="CountryCode">
+      <mandatory>1</mandatory>
+      <data-type>char(3)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="11" parent="7" name="District">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="12" parent="7" name="Population">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="13" parent="7" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
