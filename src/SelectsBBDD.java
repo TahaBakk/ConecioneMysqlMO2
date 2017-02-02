@@ -29,7 +29,6 @@ public class SelectsBBDD {
                 System.out.println( "CountryCode = " + district );
                 System.out.println( "CountryCode = " + population );
                 System.out.println("-----------------------------------");
-
             }
             rs.close();
             stmt.close();
