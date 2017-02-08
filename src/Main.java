@@ -8,7 +8,7 @@ public class Main {
 
             Tablas tbl = new Tablas();
             SelectsBBDD sbbdd= new SelectsBBDD();
-            ConsultasBBDD cBBDD = new ConsultasBBDD();
+            ConsultasBBDD cbbdd = new ConsultasBBDD();
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             //Creamos un conexion a la BBDD pasandole la ruta/schema, usuario y password
             Connection conexion = DriverManager.getConnection ("jdbc:mysql://172.31.73.167:3306/World?verifyServerCertificate=false&useSSL=true","root", "taha");
@@ -25,6 +25,9 @@ public class Main {
                     System.out.println("2.Ver el contenido de la tabla");
                     System.out.println("3.Ver descripcion de la tabla city");
                     System.out.println("4.Añadir una nueva columna \"Population\" en la tabla city");
+                    //System.out.println("5.Hacer un update de los dato ya existente a partir de un \"id\"");
+                    System.out.println("5.Cambiar el tipo de datos que contiene \"Population\"");
+                    System.out.println("6.Eliminar la columna \"Population\" en la tabla city");
 
 
                     Scanner sc = new Scanner(System.in);
@@ -36,15 +39,15 @@ public class Main {
                             break;
                         case  2: sbbdd.selectTabla(conexion);
                             break;
-                        case  3: cBBDD.descripcionTabla(conexion);
+                        case  3: cbbdd.descripcionTabla(conexion);
                             break;
-                        case  4: cBBDD.modificarTabla(conexion);
+                        case  4: cbbdd.modificarTablaAC(conexion);
                             break;
-                        /*case  5: selects.selectPeliculasID(5);
+                        case  5: cbbdd.modificarTipoColumna(conexion);
                             break;
-                        case  6: selects.selectRelacionID(5);
+                        case  6: cbbdd.modificarTablaDC(conexion);
                             break;
-                        case  7: creates.crearTablas();
+                        /*case  7: creates.crearTablas();
                             break;
                         case  8: consultasApi.mainLlamadas();
                             break;*/

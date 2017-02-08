@@ -25,7 +25,7 @@ public class ConsultasBBDD {
 
     }
 
-    public void modificarTabla(Connection conexion) throws SQLException, ClassNotFoundException {
+    public void modificarTablaAC(Connection conexion) throws SQLException, ClassNotFoundException {
 
         Connection c = conexion;
         Statement stmt = c.createStatement();
@@ -34,11 +34,30 @@ public class ConsultasBBDD {
         System.out.println("");
         stmt.executeUpdate("Alter table city add Population CHAR ;");
 
+    }
 
+    public void modificarTablaDC(Connection conexion) throws SQLException, ClassNotFoundException {
 
+        Connection c = conexion;
+        Statement stmt = c.createStatement();
 
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("");
+        stmt.executeUpdate("Alter table city DROP Population;");
 
     }
 
+    public void modificarTipoColumna(Connection conexion) throws SQLException, ClassNotFoundException {
 
+                Connection c = conexion;
+                Statement stmt = c.createStatement();
+
+                Class.forName("com.mysql.jdbc.Driver");
+                System.out.println("");
+                //stmt.executeUpdate("ALTER TABLE city ALTER COLUMN Population SET DATA TYPE INT;" );
+                stmt.executeUpdate("ALTER TABLE city CHANGE COLUMN Population Population INT ;" );
+                System.out.println("DONE");
+
+    }
+    
 }

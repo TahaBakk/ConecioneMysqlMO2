@@ -31,7 +31,7 @@
       <default-expression>&apos;&apos;</default-expression>
     </column>
     <column id="12" parent="7" name="Population">
-      <data-type>char(1)|0</data-type>
+      <data-type>int(11)|0</data-type>
     </column>
     <key id="13" parent="7" name="PRIMARY">
       <columns>ID</columns>
