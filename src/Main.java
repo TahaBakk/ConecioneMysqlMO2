@@ -8,9 +8,8 @@ public class Main {
 
             Tablas tbl = new Tablas();
             SelectsBBDD sbbdd= new SelectsBBDD();
+            ConsultasBBDD cBBDD = new ConsultasBBDD();
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            /*"?verifyServerCertificate=false&useSSL=true" esta linia se la añado por me daba error por el certificado
-            y el ssl con lo cual le marco que no verifique el certificado y que me use el SSL*/
             //Creamos un conexion a la BBDD pasandole la ruta/schema, usuario y password
             Connection conexion = DriverManager.getConnection ("jdbc:mysql://172.31.73.167:3306/World?verifyServerCertificate=false&useSSL=true","root", "taha");
             // Preparamos la consulta
@@ -18,10 +17,14 @@ public class Main {
 
                 int num=1;
                 while(num != 9){
+                    System.out.println("\n");
+                    System.out.println("------------------------------------------------");
                     System.out.println("Seleccione una de la opciones siguientes");
                     System.out.println("------------------------------------------------");
                     System.out.println("1.Crear la tabla y hacer los inserts");
                     System.out.println("2.Ver el contenido de la tabla");
+                    System.out.println("3.Ver descripcion de la tabla city");
+                    System.out.println("4.Añadir una nueva columna \"Population\" en la tabla city");
 
 
                     Scanner sc = new Scanner(System.in);
@@ -33,11 +36,11 @@ public class Main {
                             break;
                         case  2: sbbdd.selectTabla(conexion);
                             break;
-                        /*case  3: selects.selectRelacion();
+                        case  3: cBBDD.descripcionTabla(conexion);
                             break;
-                        case  4: selects.selectActoresID(5);
+                        case  4: cBBDD.modificarTabla(conexion);
                             break;
-                        case  5: selects.selectPeliculasID(5);
+                        /*case  5: selects.selectPeliculasID(5);
                             break;
                         case  6: selects.selectRelacionID(5);
                             break;
