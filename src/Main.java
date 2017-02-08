@@ -25,7 +25,6 @@ public class Main {
                     System.out.println("2.Ver el contenido de la tabla");
                     System.out.println("3.Ver descripcion de la tabla city");
                     System.out.println("4.Añadir una nueva columna \"Population\" en la tabla city");
-                    //System.out.println("5.Hacer un update de los dato ya existente a partir de un \"id\"");
                     System.out.println("5.Cambiar el tipo de datos que contiene \"Population\"");
                     System.out.println("6.Eliminar la columna \"Population\" en la tabla city");
 
